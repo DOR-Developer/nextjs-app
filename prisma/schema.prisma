@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id         String @id @map("_id")
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  age        Int?
+  created_at DateTime
+  email      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  phone      String?
+  updated_at DateTime
+  username   String
+}
