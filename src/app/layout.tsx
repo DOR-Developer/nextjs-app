@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import "@/app/ui/global.scss";
-
-const inter = Inter({ subsets: ["latin"] });
+import { globalfont } from "@/app/ui/fonts";
+import "./globals.scss";
+import SideNav from "@/app/dashboard/sidenav";
 
 export const metadata: Metadata = {
-  title: "Next.js Porfolio DOR Developer",
+  title: "Portfolio DOR Developer",
   description: "Next.js project to showcase css layouts and web a dinamic webpage - By Daniel Otero Rivera.",
 };
 
@@ -17,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${globalfont.className} antialiased`}>
+        <aside>
+          <SideNav />
+        </aside>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
