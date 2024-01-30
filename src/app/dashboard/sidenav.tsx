@@ -11,10 +11,9 @@ export default function SideNav() {
   const pathName = usePathname();
   return (
     <>
-      <div className={`${styles["dor-title-container"]} bg-emerald-600 text-white`}>
+      <div className={`${styles["dor-title-container"]} bg-emerald-500 text-white`}>
         {/* TODO: Add logo */}
-        <h2>DOR Portfolio</h2>
-        <small className="text-emerald-50">- By Daniel Otero Rivera</small>
+        <h2>My Portfolio</h2>
       </div>
       <ul className={styles["sidebar-routes"]}>
         {routeLinks.map((link) => {
@@ -26,7 +25,7 @@ export default function SideNav() {
                   "border-transparent border-solid border-2 hover:border-emerald-500", 
                   {
                     "bg-emerald-100": pathName === link.href, 
-                    "hover:border-red-500 hover:text-red-600": link.name === "Logout", 
+                    "hover:border-indigo-500 hover:bg-indigo-50": link.name === "Logout", 
                     "bg-gray-50": pathName !== link.href, 
                   }
                 )}
