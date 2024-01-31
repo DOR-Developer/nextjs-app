@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { globalfont } from "@/app/ui/fonts";
 import "./globals.scss";
 import SideNav from "@/app/dashboard/sidenav";
+import Footer from "./dashboard/footer";
 
 export const metadata: Metadata = {
   title: "Portfolio DOR Developer",
@@ -16,10 +17,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${globalfont.className} antialiased`}>
-        <aside>
+        <aside className="flex flex-col p-2 shadow-md bg-white">
           <SideNav />
         </aside>
-        <main>{children}</main>
+        <main className="flex-auto flex flex-col items-center">
+          <div className="max-w-screen-md m-auto">
+            {children}
+          </div>
+          <footer>
+            <Footer />
+          </footer>
+        </main>
       </body>
     </html>
   );

@@ -4,51 +4,38 @@
 
 body {
   display: flex;
+  min-height: 100vh;
   * {
     min-width: 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  b {
-    color: #0a9e6f;
-  }
-  aside {
-    display: flex;
-    flex-direction: column;
-    padding: .5rem;
-  }
-  
-  main {
-    flex: 1 1 auto;
-    padding: 1rem .5rem;
+    box-sizing: border-box;
   }
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
   body {
     flex-direction: row;
+    main {
+      height: 100vh;
+      overflow-y: auto;
+    }
     aside {
       flex: 0 0 300px;
       height: 100vh;
     }
-    main {
-      overflow-y: auto;
-      height: 100vh;
-    }
   }
-  
 }
 
 @media (max-width: 1023px) {
   body {
     flex-direction: column;
     aside {
-      flex: 1 1 auto;
-      height: auto;
+      position: sticky;
+      width: 100%;
+      top: 0;
+      flex: 0 0 auto;
     }
     main {
-      overflow-y: hidden;
-      height: auto;
+      height: 500px;
     }
   }
 }
