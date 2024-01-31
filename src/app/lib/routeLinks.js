@@ -1,6 +1,6 @@
 export const routeLinks = [
   {
-    name: "Home", 
+    name: "home", 
     href: "/", 
     icon: "home", 
   }, /*{
@@ -8,11 +8,11 @@ export const routeLinks = [
     href: "/dashboard", 
     icon: "dashboard", 
   },*/ {
-    name: "DOR Components", 
+    name: "component", 
     href: "/mycomponents", 
     icon: "list", 
   }, {
-    name: "About", 
+    name: "about", 
     href: "/about", 
     icon: "info", 
   }, 

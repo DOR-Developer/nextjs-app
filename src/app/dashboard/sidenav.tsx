@@ -6,17 +6,26 @@ import { routeLinks } from "@/app/lib/routeLinks";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LanguageContext } from "./pagecontent";
+import { myLocalization } from "../lib/localizationStrings";
 
-export default function SideNav() {
+export default function SideNav(props: {
+  changeLanguage: Function;
+  language: string;
+}) {
   const pathName = usePathname();
   const [hiddenMenu, setHiddenMenu] = useState(false);
+
+  const { currentLanguage } = useContext(LanguageContext) as {
+    currentLanguage: "es-ES" | "en-GB";
+  };
 
   return (
     <>
       <div onClick={() => setHiddenMenu(!hiddenMenu)} className={`${styles["dor-title-container"]} cursor-pointer hover:bg-indigo-600 bg-emerald-500 text-white`}>
         {/* TODO: Add logo */}
-        <h2>My Portfolio</h2>
+        <h2>{myLocalization[currentLanguage]["sidebar"]["title"]}</h2>
       </div>
       {!hiddenMenu && 
         <ul className={styles["sidebar-routes"]}>
@@ -42,7 +51,7 @@ export default function SideNav() {
                     height={24}
                     priority
                   />
-                  <p>{link.name}</p>
+                  <p>{myLocalization[currentLanguage]["sidebar"][link.name as "home" | "about" | "component"]}</p>
                 </Link>
 
               </li>
@@ -50,6 +59,26 @@ export default function SideNav() {
           })}
         </ul>
       }
+      <div className="flex gap-4">
+          <Image
+            src={`/english.png`}
+            alt={`Idioma inglés`}
+            className={`${props.language != "en-GB" && "opacity-30"} hover:opacity-100 dark:invert cursor-pointer`}
+            width={56}
+            height={56}
+            priority
+            onClick={() => props.changeLanguage("en-GB")}
+          />
+          <Image
+            src={`/spanish.png`}
+            alt={`Idioma español`}
+            className={`${props.language != "es-ES" && "opacity-30"} hover:opacity-100 dark:invert cursor-pointer`}
+            width={50}
+            height={50}
+            priority
+            onClick={() => props.changeLanguage("es-ES")}
+          />
+      </div>
     </>
   )
 }

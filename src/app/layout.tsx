@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { globalfont } from "@/app/ui/fonts";
 import "./globals.scss";
-import SideNav from "@/app/dashboard/sidenav";
-import Footer from "./dashboard/footer";
+import PageContent from "./dashboard/pagecontent";
 
 export const metadata: Metadata = {
   title: "Portfolio DOR Developer",
@@ -15,19 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <body className={`${globalfont.className} antialiased`}>
-        <aside className="flex flex-col p-2 shadow-md bg-white">
-          <SideNav />
-        </aside>
-        <main className="flex-auto flex flex-col items-center">
-          <div className="max-w-screen-md m-auto">
-            {children}
-          </div>
-          <footer>
-            <Footer />
-          </footer>
-        </main>
+        <PageContent childNode={children}/>
       </body>
     </html>
   );
