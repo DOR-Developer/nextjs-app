@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Page DOR</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="arial dark">
+    <nav id="language-menu">
+      <button role="button" id="language-es" class="change-language">ES</button>
+      <button role="button" id="language-en" class="change-language">EN</button>
+    </nav>
+    <nav id="side-navigation">
+      <ul>
+        <li><a href="#"></a></li>
+        <li><a href="#components"></a></li>
+        <li><a href="#gallery"></a></li>
+        <li><a href="#table"></a></li>
+        <li><a href="#kanban"></a></li>
+        <li><a href="#about"></a></li>
+        <li><a href="#cv"></a></li>
+      </ul>
+      <div id="show-side-navigation"></div>
+    </nav>
+    <div id="web-container">
+      <nav id="top-menu">
+        <ul>
+          <li>
+            <a class="no-route" href="#"></a>
+            <a class="no-route-small" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="no-route" href="#components"></a>
+            <a class="no-route-small" href="#components">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="no-route" href="#about"></a>
+            <a class="no-route-small" href="#about">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </a>
+          </li>
+          <li id="download-cv">
+            <a class="no-route" href="#cv"></a>
+            <a class="no-route-small" href="#cv">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a role="button" id="change-theme">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-200v-80h320v80H320Zm10-120q-69-41-109.5-110T180-580q0-125 87.5-212.5T480-880q125 0 212.5 87.5T780-580q0 81-40.5 150T630-320H330Zm24-80h252q45-32 69.5-79T700-580q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 54 24.5 101t69.5 79Zm126 0Z"/></svg>
+            </a>
+          </li>
+          
+        </ul>
+      </nav>
+      <main>
+        <section id="introduction">
+          <div id="profile-pic-container">
+            <div id="profile-pic-loader" class="loading-border"></div>
+            <img 
+              id="profile-pic" 
+              src="https://picsum.photos/800" 
+              alt="Photography of my face"
+              height="200"
+              width="200" />
+          </div>
+          <div>
+            <h1 id="title-text"></h1>
+            <small id="signature-text">- Daniel Otero Rivera.</small>
+          </div>
+        </section>
+        <section id="components">
+          
+        </section>
+        <section id="about">
+          <pre id="about-text"></pre>
+        </section>
+        <button onclick="goToTop()" id="go-to-top">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/></svg>
+        </button>
+        <footer>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quisquam
+            consectetur voluptatem, modi expedita accusantium autem corrupti
+            sapiente eveniet laboriosam cumque ex impedit vel quasi odit
+            asperiores neque, officiis fuga?
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
